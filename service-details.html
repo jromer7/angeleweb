@@ -44,9 +44,15 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html#hero">Inicio</a></li>
-          <li><a href="index.html#about">Nosotros</a></li>
-          <li><a href="index.html#services" class="active">Servicios</a></li>
-          <li><a href="#index">Quiero Colaborar</a></li>
+          <!--li><a href="#about">Nosotros</a></li-->
+          <li class="dropdown"><a href="index.html#about"><span>Nosotros</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>          
+              <ul>
+                <li><a href="resume.html#portfolio-details">Reconocimientos</a></li>
+                <li><a href="resume.html">Alianzas</a></li>
+                <li><a href="#"></a></li>
+              </ul>                    
+            <li><a href="index.html#services" class="active">Servicios</a></li>
+          <li><a href="index.html#contacto">Quiero Colaborar</a></li>
           <li><a href="index.html#contact">Contactos</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -57,7 +63,13 @@
 
   <main class="main">
 
-    <!-- Page Title -->
+
+
+
+    <!-- Service Details Section -->
+    <section id="service-details" class="service-details section">
+
+    <!-- Page Title -->      
     <div class="page-title" data-aos="fade">
       <div class="heading">
         <div class="container">
@@ -72,8 +84,6 @@
 
     </div><!-- End Page Title -->
 
-    <!-- Service Details Section -->
-    <section id="service-details" class="service-details section">
 
       <div class="container">
 
@@ -105,21 +115,9 @@
 
           <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
             <img src="assets/img/services/services-4.jpg" alt="" class="img-fluid services-img">
-            <!--h3>Texto</h3>
-            <p>
-              Texto.
-            </p>
-            <ul>
-              <li><i class="bi bi-check-circle"></i> <span>Texto.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Texto</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Texto</span></li>
-            </ul>
-            <p>
-              Texto sobre el servicio detalle.
-            </p-->
-            <p>
+            <!--p>
               Texto sobre el servicio detalle
-            </p>
+            </p-->
           </div>
 
         </div>

@@ -7,9 +7,9 @@
 
 /* Global Colors - Colores globales  The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #000000; /* Background color for the entire website, including individual sections */
-  --default-color: #f5f5f5; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #066dc0; /* Color for headings, subheadings and title throughout the website */
+  --background-color: #000000; /* fondo para todo el sitio web, incluidas las secciones individuales*/
+  --default-color: #f5f5f5; /* contenido de texto en todo el sitio */
+  --heading-color: #066dc0; /* encabezados, subencabezados y títulos en todo el sitio */
   --accent-color: #ffff00; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #56562488; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #000000; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
@@ -725,7 +725,7 @@ section,
 
 .hero p {
   margin: 3px 0 0 0;/*subrayado*/
-  font-size: 46px;
+  font-size: 40px;/*texto central*/
 }
 
 .hero p span {
@@ -1434,7 +1434,7 @@ section,
 }
 
 .portfolio-details .portfolio-info ul li+li {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .portfolio-details .portfolio-description {
