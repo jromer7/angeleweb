@@ -257,6 +257,79 @@
   });
 
   /**
+   * Lightbox - ampliar imagen de anuncio al hacer clic
+   */
+  const imgLightbox      = document.getElementById('imgLightbox');
+  const imgLightboxImg   = document.getElementById('imgLightboxImg');
+  const imgLightboxClose = document.getElementById('imgLightboxCerrar');
+
+  if (imgLightbox && imgLightboxImg) {
+    // Delegar el evento en el overlay de anuncios para capturar las imágenes
+    document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('anuncio-img-zoom')) {
+        imgLightboxImg.src = e.target.src;
+        imgLightboxImg.alt = e.target.alt;
+        imgLightbox.classList.add('activo');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+
+    function cerrarLightbox() {
+      imgLightbox.classList.remove('activo');
+      document.body.style.overflow = '';
+      imgLightboxImg.src = '';
+    }
+
+    // Cerrar con botón X
+    imgLightboxClose.addEventListener('click', cerrarLightbox);
+
+    // Cerrar al hacer clic en el fondo oscuro
+    imgLightbox.addEventListener('click', (e) => {
+      if (e.target === imgLightbox) cerrarLightbox();
+    });
+
+    // Cerrar con Escape (comparte el mismo listener del modal)
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && imgLightbox.classList.contains('activo')) {
+        cerrarLightbox();
+      }
+    });
+  }
+
+  /**
+   * Modal de Anuncios
+   */
+  const anunciosBtn     = document.getElementById('anunciosBtn');
+  const anunciosOverlay = document.getElementById('anunciosOverlay');
+  const anunciosCerrar  = document.getElementById('anunciosCerrar');
+
+  if (anunciosBtn && anunciosOverlay) {
+    // Abrir modal
+    anunciosBtn.addEventListener('click', () => {
+      anunciosOverlay.classList.add('activo');
+      document.body.style.overflow = 'hidden'; // bloquear scroll del fondo
+    });
+
+    // Cerrar con el botón X
+    anunciosCerrar.addEventListener('click', cerrarAnuncios);
+
+    // Cerrar haciendo clic fuera del modal
+    anunciosOverlay.addEventListener('click', (e) => {
+      if (e.target === anunciosOverlay) cerrarAnuncios();
+    });
+
+    // Cerrar con la tecla Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') cerrarAnuncios();
+    });
+
+    function cerrarAnuncios() {
+      anunciosOverlay.classList.remove('activo');
+      document.body.style.overflow = '';
+    }
+  }
+
+  /**
    * Navmenu Scrollspy
    */
   let navmenulinks = document.querySelectorAll('.navmenu a');
