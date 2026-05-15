@@ -33,7 +33,50 @@
   <a href="https://www.facebook.com/profile.php?id=100082624683770"><i class="bi bi-facebook"></i></a>
   <a href="#"><i class="bi bi-instagram"></i></a>
   <a href="#"><i class="bi bi-whatsapp"></i></a>
+
+  <!-- BOTON -->
+  <div class="text-end">
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#anuncioModal">
+    Ver anuncio
+  </button>
+  </div> 
+  <!-- VENTANA EMERGENTE -->
+  <div class="modal fade" id="anuncioModal" tabindex="-1" aria-labelledby="anuncioLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title" id="anuncioLabel">Anuncio</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!--div class="modal-body">
+          Bienvenido a nuestra página web 
+        </div-->
+
+        <div class="modal-body text-center">
+
+          <!-- IMAGEN -->
+          <img src="assets/img/imagen.jpg"
+              class="img-fluid rounded mb-3"
+              alt="Anuncio">
+
+          <!-- TEXTO -->
+          <p>
+            Bienvenido a nuestra página oficial.  
+          </p>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
 </div>
+
+
+
 
 <body class="index-page">
   <!-- Menu -->
@@ -633,38 +676,6 @@ Hoy, somos un símbolo de resiliencia y entrega, trabajando día a día para que
       </div>      
     </div>
   </footer>
-
-  <!-- Botón de Anuncios (esquina inferior izquierda) -->
-  <button id="anuncio-btn" class="anuncio-btn" title="Ver anuncios">
-    <i class="bi bi-megaphone-fill"></i>
-    <span class="anuncio-badge">1</span>
-  </button>
-
-  <!-- Modal de Anuncios -->
-  <div id="anuncio-modal" class="anuncio-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="anuncio-title">
-    <div class="anuncio-modal-box">
-      <div class="anuncio-modal-header">
-        <div class="anuncio-header-left">
-          <i class="bi bi-megaphone-fill"></i>
-          <h3 id="anuncio-title">Anuncios</h3>
-        </div>
-        <button class="anuncio-close" id="anuncio-close" aria-label="Cerrar">&times;</button>
-      </div>
-      <div class="anuncio-modal-body">
-        <!-- ✏️ EDITA AQUÍ TU ANUNCIO -->
-        <div class="anuncio-item">
-          <span class="anuncio-tag">🔔 Nuevo</span>
-          <h4>¡Campaña de prevención de incendios!</h4>
-          <p>Este sábado 17 de mayo a las 10:00 AM realizaremos una jornada de capacitación gratuita para toda la comunidad en el Parque Central de Tarija. ¡No te lo pierdas!</p>
-          <span class="anuncio-fecha"><i class="bi bi-calendar3"></i> 17 de mayo, 2025</span>
-        </div>
-        <!-- Puedes agregar más bloques .anuncio-item aquí -->
-      </div>
-      <div class="anuncio-modal-footer">
-        <button class="anuncio-cerrar-btn" id="anuncio-close-footer">Cerrar</button>
-      </div>
-    </div>
-  </div>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

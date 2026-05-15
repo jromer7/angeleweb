@@ -280,44 +280,4 @@
 
 
 
-
-  /**
-   * Botón y modal de Anuncios
-   */
-  const anuncioBtn = document.getElementById('anuncio-btn');
-  const anuncioModal = document.getElementById('anuncio-modal');
-  const anuncioClose = document.getElementById('anuncio-close');
-  const anuncioCloseFooter = document.getElementById('anuncio-close-footer');
-
-  function openAnuncioModal() {
-    anuncioModal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    // Ocultar badge al abrir
-    const badge = document.querySelector('.anuncio-badge');
-    if (badge) badge.style.display = 'none';
-  }
-
-  function closeAnuncioModal() {
-    anuncioModal.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  if (anuncioBtn) anuncioBtn.addEventListener('click', openAnuncioModal);
-  if (anuncioClose) anuncioClose.addEventListener('click', closeAnuncioModal);
-  if (anuncioCloseFooter) anuncioCloseFooter.addEventListener('click', closeAnuncioModal);
-
-  // Cerrar al hacer clic fuera del modal
-  if (anuncioModal) {
-    anuncioModal.addEventListener('click', function(e) {
-      if (e.target === anuncioModal) closeAnuncioModal();
-    });
-  }
-
-  // Cerrar con tecla Escape
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && anuncioModal && anuncioModal.classList.contains('active')) {
-      closeAnuncioModal();
-    }
-  });
-
 })();
