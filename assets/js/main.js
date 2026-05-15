@@ -257,39 +257,6 @@
   });
 
   /**
-   * Modal de Anuncios
-   */
-  const anunciosBtn     = document.getElementById('anunciosBtn');
-  const anunciosOverlay = document.getElementById('anunciosOverlay');
-  const anunciosCerrar  = document.getElementById('anunciosCerrar');
-
-  if (anunciosBtn && anunciosOverlay) {
-    // Abrir modal
-    anunciosBtn.addEventListener('click', () => {
-      anunciosOverlay.classList.add('activo');
-      document.body.style.overflow = 'hidden'; // bloquear scroll del fondo
-    });
-
-    // Cerrar con el botón X
-    anunciosCerrar.addEventListener('click', cerrarAnuncios);
-
-    // Cerrar haciendo clic fuera del modal
-    anunciosOverlay.addEventListener('click', (e) => {
-      if (e.target === anunciosOverlay) cerrarAnuncios();
-    });
-
-    // Cerrar con la tecla Escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') cerrarAnuncios();
-    });
-
-    function cerrarAnuncios() {
-      anunciosOverlay.classList.remove('activo');
-      document.body.style.overflow = '';
-    }
-  }
-
-  /**
    * Navmenu Scrollspy
    */
   let navmenulinks = document.querySelectorAll('.navmenu a');
