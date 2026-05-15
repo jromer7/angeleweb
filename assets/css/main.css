@@ -645,6 +645,19 @@ section,
   gap: 10px;
 }
 
+.anuncio-float {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+
 .social-float a {
   width: 45px;
   height: 45px;
