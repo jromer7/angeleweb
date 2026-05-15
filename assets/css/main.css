@@ -864,6 +864,44 @@ section,
   transform: rotate(90deg);
 }
 
+/* Flechas de navegación dentro del lightbox */
+.lb-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  width: 44px;
+  height: 60px;
+  border-radius: 6px;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+  z-index: 2;
+}
+
+.lb-nav:hover { background: #ffff00; color: #000; }
+.lb-nav-prev  { left: 16px; }
+.lb-nav-next  { right: 16px; }
+
+/* Contador "1 / 3" */
+.lb-counter {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  font-size: 0.85rem;
+  padding: 3px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+}
+
 /* Cursor lupa en las miniaturas */
 .anuncio-img-zoom {
   cursor: zoom-in;
@@ -888,11 +926,86 @@ section,
   border-color: rgba(255,255,0,0.35);
 }
 
-.anuncio-item img {
-  width: 120px;
-  min-width: 120px;
+/*--------------------------------------------------------------
+# Carrusel de imágenes dentro de cada anuncio
+--------------------------------------------------------------*/
+.anuncio-carrusel {
+  position: relative;
+  width: 130px;
+  min-width: 130px;
+  height: 110px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.car-pista {
+  display: flex;
+  height: 100%;
+  transition: transform 0.35s ease;
+}
+
+.car-pista img {
+  width: 130px;
+  min-width: 130px;
   height: 110px;
   object-fit: cover;
+  flex-shrink: 0;
+  display: block;
+}
+
+.car-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  border: none;
+  width: 24px;
+  height: 36px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s, background 0.2s;
+  padding: 0;
+}
+
+.anuncio-carrusel:hover .car-btn {
+  opacity: 1;
+}
+
+.car-prev { left: 2px; }
+.car-next { right: 2px; }
+
+.car-btn:hover { background: #ffff00; color: #000; }
+.car-btn.oculto { display: none; }
+
+.car-puntos {
+  position: absolute;
+  bottom: 4px;
+  left: 0; right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  z-index: 2;
+}
+
+.car-punto {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  border: none; padding: 0;
+}
+
+.car-punto.activo {
+  background: #ffff00;
+  transform: scale(1.25);
 }
 
 .anuncio-texto {
@@ -926,15 +1039,20 @@ section,
   gap: 5px;
 }
 
-/* Responsive: en pantallas pequeñas la imagen va arriba */
+/* Responsive: en pantallas pequeñas el carrusel va arriba */
 @media (max-width: 480px) {
   .anuncio-item {
     flex-direction: column;
   }
-  .anuncio-item img {
+  .anuncio-carrusel {
     width: 100%;
     min-width: unset;
-    height: 160px;
+    height: 170px;
+  }
+  .car-pista img {
+    width: 100%;
+    min-width: 100%;
+    height: 170px;
   }
   .anuncio-texto {
     padding: 12px;
