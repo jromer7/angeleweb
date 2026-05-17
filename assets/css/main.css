@@ -1695,8 +1695,8 @@ section,
 
 /* Caja del modal */
 .anuncio-modal-box {
-  background: #1a1a1a;
-  border: 1px solid rgba(244, 81, 22, 0.35);
+  background: #000000;/* fondo */
+  border: 1px solid rgba(224, 81, 29, 0.35);
   border-radius: 14px;
   width: 100%;
   max-width: 480px;
@@ -1805,14 +1805,14 @@ section,
 }
 
 .anuncio-item p {
-  color: #e0e0e0;
+  color: #ffffff;
   font-size: 0.9rem;
   line-height: 1.6;
   margin: 0 0 10px 0;
 }
 
 .anuncio-fecha {
-  color: #999;
+  color: #ffff00;
   font-size: 0.78rem;
   display: flex;
   align-items: center;
