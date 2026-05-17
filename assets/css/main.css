@@ -643,8 +643,6 @@ section,
   display: flex;
   flex-direction: column;
   gap: 10px;
-
-  align-items: flex-end;
 }
 
 .social-float a {
@@ -1619,6 +1617,243 @@ section,
 .texto-justificado {
   text-align: justify;
 }
+/*--------------------------------------------------------------
+# Botón y Modal de Anuncios
+--------------------------------------------------------------*/
 
+/* Botón flotante esquina inferior izquierda */
+.anuncio-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f45116, #ff7043);
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(244, 81, 22, 0.55);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: anuncio-pulse 2.5s infinite;
+}
 
+.anuncio-btn:hover {
+  transform: scale(1.12);
+  box-shadow: 0 6px 28px rgba(244, 81, 22, 0.75);
+  animation: none;
+}
 
+/* Badge de notificación */
+.anuncio-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #ffff00;
+  color: #000;
+  font-size: 11px;
+  font-weight: 700;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #000;
+  line-height: 1;
+}
+
+@keyframes anuncio-pulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(244, 81, 22, 0.55); }
+  50%       { box-shadow: 0 4px 32px rgba(244, 81, 22, 0.9), 0 0 0 8px rgba(244, 81, 22, 0.15); }
+}
+
+/* Overlay del modal */
+.anuncio-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  padding: 16px;
+}
+
+.anuncio-modal-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Caja del modal */
+.anuncio-modal-box {
+  background: #1a1a1a;
+  border: 1px solid rgba(244, 81, 22, 0.35);
+  border-radius: 14px;
+  width: 100%;
+  max-width: 480px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+  transform: translateY(30px) scale(0.96);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.anuncio-modal-overlay.active .anuncio-modal-box {
+  transform: translateY(0) scale(1);
+}
+
+/* Header del modal */
+.anuncio-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px 14px;
+  background: linear-gradient(135deg, #f45116, #ff7043);
+  flex-shrink: 0;
+}
+
+.anuncio-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+}
+
+.anuncio-header-left i {
+  font-size: 20px;
+}
+
+.anuncio-modal-header h3 {
+  color: #fff;
+  font-family: var(--heading-font);
+  font-size: 1.15rem;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.anuncio-close {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.anuncio-close:hover {
+  background: rgba(255,255,255,0.35);
+}
+
+/* Cuerpo del modal */
+.anuncio-modal-body {
+  padding: 20px 22px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Tarjeta de anuncio */
+.anuncio-item {
+  background: rgba(244, 81, 22, 0.08);
+  border-left: 3px solid #f45116;
+  border-radius: 8px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+
+.anuncio-item:last-child {
+  margin-bottom: 0;
+}
+
+.anuncio-tag {
+  display: inline-block;
+  background: rgba(244, 81, 22, 0.2);
+  color: #ff7043;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+.anuncio-item h4 {
+  color: #ffff00;
+  font-family: var(--heading-font);
+  font-size: 1rem;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+}
+
+.anuncio-item p {
+  color: #e0e0e0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0 0 10px 0;
+}
+
+.anuncio-fecha {
+  color: #999;
+  font-size: 0.78rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Footer del modal */
+.anuncio-modal-footer {
+  padding: 14px 22px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+.anuncio-cerrar-btn {
+  background: transparent;
+  border: 1px solid rgba(244, 81, 22, 0.5);
+  color: #f45116;
+  padding: 8px 24px;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.anuncio-cerrar-btn:hover {
+  background: #f45116;
+  color: #fff;
+}
+
+@media (max-width: 480px) {
+  .anuncio-modal-box {
+    max-height: 92vh;
+  }
+  .anuncio-btn {
+    bottom: 16px;
+    left: 16px;
+    width: 50px;
+    height: 50px;
+    font-size: 19px;
+  }
+}

@@ -55,8 +55,8 @@
         <div class="modal-body">
           <p>“Tu ayuda puede abrigar una vida”</p>
 
-En esta temporada de frío, muchas personas en situación de calle necesitan de nuestra solidaridad.
-Te invitamos a participar en nuestra campaña de recolección de ropa y víveres para brindar apoyo a quienes más lo necesitan.
+<p>En esta temporada de frío, muchas personas en situación de calle necesitan de nuestra solidaridad.
+Te invitamos a participar en nuestra campaña de recolección de ropa y víveres para brindar apoyo a quienes más lo necesitan.</p>
 
 <p>🧥 ¿Qué puedes donar?
 Ropa de invierno
@@ -100,7 +100,46 @@ Productos de higiene personal</p>
 
 </div>
 
+  <!-- Botón de Anuncios (esquina inferior izquierda) -->
+  <button id="anuncio-btn" class="anuncio-btn" title="Ver anuncios">
+    <i class="bi bi-megaphone-fill"></i>
+    <span class="anuncio-badge">1</span>
+  </button>
 
+  <!-- Modal de Anuncios -->
+  <div id="anuncio-modal" class="anuncio-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="anuncio-title">
+    <div class="anuncio-modal-box">
+      <div class="anuncio-modal-header">
+        <div class="anuncio-header-left">
+          <i class="bi bi-megaphone-fill"></i>
+          <h3 id="anuncio-title">Anuncios</h3>
+        </div>
+        <button class="anuncio-close" id="anuncio-close" aria-label="Cerrar">&times;</button>
+      </div>
+      <div class="anuncio-modal-body">
+        <!-- ✏️ EDITA AQUÍ TU ANUNCIO -->
+        <div class="anuncio-item">
+          <span class="anuncio-tag">🔔 Nuevo</span>
+          <h4>¡❄️ CAMPAÑA SOLIDARIA DE INVIERNO ❄️!</h4>
+          <p>En esta temporada de frío, muchas personas en situación de calle necesitan de nuestra solidaridad.
+Te invitamos a participar en nuestra campaña de recolección de ropa y víveres para brindar apoyo a quienes más lo necesitan.</p>
+          <p>🧥 ¿Qué puedes donar?</p>
+          <p>Ropa de invierno
+          Chamarras y abrigos
+          Suéteres y hoodies
+          Bufandas, gorros y guantes
+          Cobijas y frazadas
+          Calcetines en buen estado</p>
+          <span class="anuncio-fecha"><i class="bi bi-calendar3"></i> 17 de mayo, 2025</span>
+          <img src="assets/img/imagen.jpg" class="img-fluid rounded mb-3" alt="Anuncio">          
+        </div>
+        <!-- Puedes agregar más bloques .anuncio-item aquí -->
+      </div>
+      <div class="anuncio-modal-footer">
+        <button class="anuncio-cerrar-btn" id="anuncio-close-footer">Cerrar</button>
+      </div>
+    </div>
+  </div>
 
 
 <body class="index-page">
